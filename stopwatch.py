@@ -28,7 +28,7 @@ def stop_tick():
 def continue_tick():
     btncontinue.pack_forget()  # зникає CONTINUE
     btnreset.pack_forget()  # зникає RESET
-    btnstart.pack()  # з'являється START
+    btnstop.pack()  # з'являється START
     tick()  # функція продовжує відлік
 
 def reset_tick():
@@ -39,10 +39,11 @@ def reset_tick():
     btnreset.pack_forget()
     btnstart.pack()
 
-root = Tk()
+root = Tk()  # створення головного вікна
 root.title('Stopwatch')  # заголовок вікна
 root.resizable(width=False, height=False)  # заборона зміни розміру головного вікна
 root.geometry('300x230')  # розмір вікна
+root.iconbitmap('stopwatch_icon.ico')
 
 label1 = Label(root, width=10, font=('UniDreamLED', 60), text='00:00')
 label1.pack()
@@ -55,4 +56,4 @@ btncontinue = Button(root, text='CONTINUE', font=('Arial', 20), width=15, comman
 btnstart.pack()  # вивід кнопки
 
 
-root.mainloop()
+root.mainloop()  # запуск
