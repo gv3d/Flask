@@ -44,16 +44,20 @@ root.title('Stopwatch')  # заголовок вікна
 root.resizable(width=False, height=False)  # заборона зміни розміру головного вікна
 root.geometry('300x230')  # розмір вікна
 root.iconbitmap('stopwatch_icon.ico')
+#root.config(bg='black')  # колір фону
+#root['bg'] = 'black'  # колір фону(варіант 2)
 
 label1 = Label(root, width=10, font=('UniDreamLED', 60), text='00:00')
 label1.pack()
 
-# кнопки:
-btnstart = Button(root, text='START', font=('Arial', 20), width=15, command=start_tick)
+# кнопки(розмір кнопки залежить від розміру шрифту):
+btnstart = Button(root, text='START', font=('Arial', 20), activebackground='red', width=15, command=start_tick)
 btnstop = Button(root, text='STOP', font=('Arial', 20), width=15, command=stop_tick)
 btnreset = Button(root, text='RESET', font=('Arial', 20), width=15, command=reset_tick)
 btncontinue = Button(root, text='CONTINUE', font=('Arial', 20), width=15, command=continue_tick)
-btnstart.pack()  # вивід кнопки
-
+btnstart.pack()  # вивід кнопок
+# activebackground='red' - колір кнопки при натисканні
+# activeforeground='white' - колір кнопки після натискання
+# fg='green'- колір тексту кнопки
 
 root.mainloop()  # запуск
